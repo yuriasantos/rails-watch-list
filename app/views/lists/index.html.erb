@@ -1,0 +1,15 @@
+<h1>Yuri's movie lists</h1>
+
+
+<h2>My lists</h2>
+
+<% @lists.each do |list| %>
+  <p><%= link_to list.name, list_path(list) %></p>
+<% end %>
+
+<h2>Create a new list</h2>
+
+<%= simple_form_for @new_list do |f| %>
+  <%= f.input :name, label: 'Give your list a name:' %>
+  <%= f.button :submit %>
+<% end %>
